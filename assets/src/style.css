@@ -1,0 +1,196 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav{
+    grid-area: barra;
+    background-color: #385277;
+    color: white;
+}
+
+.navegar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.nombre{
+    font-size: 2em;
+    animation-name: colorear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+@keyframes colorear{
+    from{
+        color: white;
+    }
+    to{
+        color: orangered;
+    }
+}
+
+main{
+    grid-area: cuerpo;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer{
+    grid-area: pie;
+    background-color: #042743;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        "barra"
+        "cuerpo"
+        "pie";
+    height: 100vh;
+    gap: 0;
+}
+
+.catalogo{
+    display: none;
+}
+
+.principal div{
+    transition: transform 1s, filter 1s;
+}
+
+.principal div img{
+    width: 300px;
+    height: 310px;
+    border-radius: 0.3em;
+    filter: grayscale(100%);
+    transition: transform 1s;
+}
+
+.pe7, .pe8{
+    width: 300px;
+    height: 310px;
+}
+
+.principal div:hover img{
+    filter: grayscale(0%);
+    transform: scale(0.9);
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.material-icons{
+    margin-right: 20px;
+    background-color: #042743;
+    color: white;
+}
+
+.ultimo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primero{
+    margin-right: 5px;
+}
+
+.nombreM{
+    font-size: 18px;
+    transition: all 1s linear;
+    text-transform: none;
+    transition-delay: 1s;
+}
+
+.nombreM:hover{
+    text-transform: capitalize;
+    color: orangered;
+    text-decoration: none;
+}
+
+.gg-instagram{
+    margin-top: 3px;
+    background-color: #042743;
+    color: white;
+}
+
+
+@media(min-width: 992px){
+    .container{
+        grid-template-areas: 
+            "barra listado"
+            "barra cuerpo"
+            "barra pie";
+        grid-template-columns: 15% 1fr;
+    }
+
+    .catalogo{
+        display: flex;
+        text-align: center;
+    }
+
+    .navegar{
+        display: flex;
+       align-items: center;
+    }
+   
+    ul{
+        padding: 10px;
+        list-style: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+    ul li{
+        padding: 5px;
+    }
+
+    .icono-barras{
+        display: none;
+    }
+
+    .nombre{
+        margin-left: 20px;
+    }
+
+    .principal{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 5px;
+        margin-left: 20px;
+    }
+
+    .principal div{
+        width: 24%;
+        transition: transform 1s, filter 1s;
+    }
+
+    .principal div img{
+        height: 280px;
+        width: 280px;
+        border-radius: 0.3em;
+        filter: grayscale(100%);
+        transition: transform 1s;
+    }
+
+    .principal div:hover img{
+        filter: grayscale(0%);
+        transform: scale(0.9);
+    }
+
+}
